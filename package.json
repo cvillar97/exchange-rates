@@ -16,4 +16,10 @@
     "url": "https://github.com/cvillar97/exchange-rates/issues"
   },
   "homepage": "https://github.com/cvillar97/exchange-rates#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  },
+  "devDependencies": {
+    "cypress": "^13.2.0"
+  }
 }
