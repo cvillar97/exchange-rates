@@ -1,0 +1,13 @@
+body {
+  background-color: rgb(102, 255, 102);
+}
+
+header {
+  font-size: 3.5em;
+  font-family: FreeMono, monospace;
+  margin: 20px;
+}
+
+header > span {
+  color: #198754;
+}
