@@ -15,3 +15,6 @@ header {
 header > span {
   color: #198754;
 }
+.hidden {
+  display: none;
+}
