@@ -12,6 +12,11 @@ function updateTextContent(text, id) {
   element.textContent = text;
 }
 
+function showElement(element) {
+  element.classList.remove("hidden");
+  window.scrollTo(0, 1000);
+}
+
 function getCurrenciesList(date, baseCurrency) {
   return fetch(
     `https://api.apilayer.com/exchangerates_data/${date}&base=${baseCurrency}`,
@@ -44,6 +49,9 @@ function createCurrenciesTable() {
 
   updateTextContent(`Rates of the day ${date}`, ".table-date");
   updateTextContent(`Value in ${baseCurrency} base`, "#th-value");
+  showElement(tableContainer);
+}
+
 }
 
 function getAPIData() {
