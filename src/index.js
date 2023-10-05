@@ -74,8 +74,6 @@ function showConversion() {
   const targetCurrency = document.querySelector("#target-currency").value;
   const amount = document.querySelector("#amount").value;
 
-  console.log(baseCurrency);
-
   getAPIConversion(targetCurrency, baseCurrency, amount).then((result) => {
     updateTextContent(result, "#result");
   });
