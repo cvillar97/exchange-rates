@@ -42,6 +42,8 @@ function createCurrenciesTable() {
     });
   });
 
+  updateTextContent(`Rates of the day ${date}`, ".table-date");
+  updateTextContent(`Value in ${baseCurrency} base`, "#th-value");
 }
 
 function getAPIData() {
