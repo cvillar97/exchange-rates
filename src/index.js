@@ -83,6 +83,13 @@ function setOptions() {
   });
 }
 
+function addEvents() {
+  document
+    .querySelector("#enter")
+    .addEventListener("click", createCurrenciesTable);
+
+}
+
 function setDate() {
   const $dateInput = document.querySelector("input[type='date']");
   const todaysDate = new Date().toISOString().split("T")[0];
@@ -92,6 +99,7 @@ function setDate() {
 
 function initialize() {
   setDate();
+  addEvents();
   setOptions();
 }
 
