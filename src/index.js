@@ -1,3 +1,12 @@
+const myHeaders = new Headers();
+myHeaders.append("apikey", "ObrRM6eYVg1bioHuZ0PPB7PJIr4g8rIR");
+
+const requestOptions = {
+  method: "GET",
+  redirect: "follow",
+  headers: myHeaders,
+};
+
 function getAPIData() {
   return fetch(
     "https://api.apilayer.com/exchangerates_data/latest",
