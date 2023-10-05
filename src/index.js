@@ -1,9 +1,10 @@
 function getAPIData() {
   return fetch(
-    "https://v6.exchangerate-api.com/v6/25d3c2f1d859378e60aa2882/latest/USD"
+    "https://api.apilayer.com/exchangerates_data/latest",
+    requestOptions
   )
     .then((response) => response.json())
-    .then((JSONresponse) => JSONresponse.conversion_rates);
+    .then((JSONresponse) => JSONresponse.rates);
 }
 
 function setOptions() {
