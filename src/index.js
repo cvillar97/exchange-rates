@@ -60,6 +60,15 @@ function createCurrenciesTable() {
   showElement(tableContainer);
 }
 
+function getAPIConversion(to, from, amount) {
+  return fetch(
+    `https://api.apilayer.com/exchangerates_data/convert?to=${to}&from=${from}&amount=${amount}`,
+    requestOptions
+  )
+    .then((response) => response.json())
+    .then((JSONresponse) => JSONresponse.result);
+}
+
 }
 
 function getAPIData() {
