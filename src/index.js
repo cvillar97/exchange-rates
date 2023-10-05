@@ -7,6 +7,11 @@ const requestOptions = {
   headers: myHeaders,
 };
 
+function updateTextContent(text, id) {
+  let element = document.querySelector(id);
+  element.textContent = text;
+}
+
 function getCurrenciesList(date, baseCurrency) {
   return fetch(
     `https://api.apilayer.com/exchangerates_data/${date}&base=${baseCurrency}`,
