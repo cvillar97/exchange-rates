@@ -107,6 +107,7 @@ function addEvents() {
     .querySelector("#enter")
     .addEventListener("click", createCurrenciesTable);
 
+  document.querySelector("#convert").addEventListener("click", showConversion);
 }
 
 function setDate() {
