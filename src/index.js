@@ -7,6 +7,15 @@ const requestOptions = {
   headers: myHeaders,
 };
 
+function getCurrenciesList(date, baseCurrency) {
+  return fetch(
+    `https://api.apilayer.com/exchangerates_data/${date}&base=${baseCurrency}`,
+    requestOptions
+  )
+    .then((response) => response.json())
+    .then((JSONresponse) => JSONresponse.rates);
+}
+
 function getAPIData() {
   return fetch(
     "https://api.apilayer.com/exchangerates_data/latest",
