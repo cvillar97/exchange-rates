@@ -10,13 +10,11 @@ function getAPIData() {
 function setOptions() {
   getAPIData().then((currencies) => {
     document.querySelectorAll("select").forEach((select) => {
-      Object.keys(currencies)
-        .sort()
-        .forEach((currency) => {
-          const option = document.createElement("option");
-          option.textContent = `${currency}`;
-          select.appendChild(option);
-        });
+      Object.keys(currencies).forEach((currency) => {
+        const option = document.createElement("option");
+        option.textContent = `${currency}`;
+        select.appendChild(option);
+      });
     });
   });
 }
