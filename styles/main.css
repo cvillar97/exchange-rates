@@ -15,6 +15,16 @@ header {
 header > span {
   color: #198754;
 }
+
+.table-container {
+  height: 700px;
+  width: 600px;
+}
+
+#table-of-currencies {
+  text-align: center;
+}
+
 .hidden {
   display: none;
 }
