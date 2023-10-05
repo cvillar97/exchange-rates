@@ -69,6 +69,16 @@ function getAPIConversion(to, from, amount) {
     .then((JSONresponse) => JSONresponse.result);
 }
 
+function showConversion() {
+  const baseCurrency = document.querySelector("#from-currency").value;
+  const targetCurrency = document.querySelector("#target-currency").value;
+  const amount = document.querySelector("#amount").value;
+
+  console.log(baseCurrency);
+
+  getAPIConversion(targetCurrency, baseCurrency, amount).then((result) => {
+    updateTextContent(result, "#result");
+  });
 }
 
 function getAPIData() {
