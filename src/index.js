@@ -20,14 +20,15 @@ function setOptions() {
   });
 }
 
-function setMaxDate() {
+function setDate() {
   const $dateInput = document.querySelector("input[type='date']");
   const todaysDate = new Date().toISOString().split("T")[0];
   $dateInput.setAttribute("max", todaysDate);
+  $dateInput.value = todaysDate;
 }
 
 function initialize() {
-  setMaxDate();
+  setDate();
   setOptions();
 }
 
