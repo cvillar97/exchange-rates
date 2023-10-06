@@ -99,6 +99,11 @@ function update() {
   createCurrenciesTable();
 }
 
+function showLoadingPoster() {
+  const tableBody = document.querySelector("#table-body");
+  tableBody.innerHTML = "Loading...";
+}
+
 function addEvents() {
   document
     .querySelector("button[id='enter']")
