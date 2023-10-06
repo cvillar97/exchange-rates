@@ -54,11 +54,6 @@ function createCurrenciesTable() {
   showElement(tableContainer);
 }
 
-function showLoadingPoster() {
-  const tableBody = document.querySelector("#table-body");
-  tableBody.innerHTML = "Loading...";
-}
-
 function getAPIConversion(to, from, amount) {
   return fetch(
     `https://api.apilayer.com/exchangerates_data/convert?to=${to}&from=${from}&amount=${amount}`,
@@ -99,12 +94,19 @@ function setOptions() {
   });
 }
 
+function update() {
+  showLoadingPoster();
+  createCurrenciesTable();
+}
+
 function addEvents() {
   document
-    .querySelector("#enter")
-    .addEventListener("click", createCurrenciesTable);
+    .querySelector("button[id='enter']")
+    .addEventListener("click", update);
 
-  document.querySelector("#convert").addEventListener("click", showConversion);
+  document
+    .querySelector("button[id='convert']")
+    .addEventListener("click", showConversion);
 }
 
 function setDate() {
@@ -116,8 +118,8 @@ function setDate() {
 
 function initialize() {
   setDate();
-  addEvents();
   setOptions();
+  addEvents();
 }
 
 initialize();
