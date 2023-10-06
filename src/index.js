@@ -29,10 +29,12 @@ function getCurrenciesList(date, baseCurrency) {
 function createCurrenciesTable() {
   const tableContainer = document.querySelector(".table-container");
   const tableBody = document.querySelector("#table-body");
+
   const date = document.querySelector("#date").value;
   const baseCurrency = document.querySelector("#base-currency").value;
 
   getCurrenciesList(date, baseCurrency).then((currenciesList) => {
+    tableBody.innerHTML = "";
     Object.keys(currenciesList).forEach((currency) => {
       const currencyTr = document.createElement("tr");
       const currencyTd = document.createElement("td");
@@ -50,6 +52,11 @@ function createCurrenciesTable() {
   updateTextContent(`Rates of the day ${date}`, ".table-date");
   updateTextContent(`Value in ${baseCurrency} base`, "#th-value");
   showElement(tableContainer);
+}
+
+function showLoadingPoster() {
+  const tableBody = document.querySelector("#table-body");
+  tableBody.innerHTML = "Loading...";
 }
 
 function getAPIConversion(to, from, amount) {
