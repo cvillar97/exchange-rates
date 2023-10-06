@@ -17,13 +17,6 @@ function showElement(element) {
   window.scrollTo(0, 1000);
 }
 
-function removePreviousRates() {
-  const previousRates = document.querySelectorAll("#table-body tr");
-  if (previousRates) {
-    previousRates.forEach((rate) => rate.remove());
-  }
-}
-
 function getCurrenciesList(date, baseCurrency) {
   return fetch(
     `https://api.apilayer.com/exchangerates_data/${date}&base=${baseCurrency}`,
@@ -34,7 +27,6 @@ function getCurrenciesList(date, baseCurrency) {
 }
 
 function createCurrenciesTable() {
-  removePreviousRates();
   const tableContainer = document.querySelector(".table-container");
   const tableBody = document.querySelector("#table-body");
   const date = document.querySelector("#date").value;
