@@ -1,0 +1,14 @@
+{
+  "success": true,
+  "query": {
+    "from": "USD",
+    "to": "ARS",
+    "amount": 2000
+  },
+  "info": {
+    "timestamp": 1696954623,
+    "rate": 350.0283
+  },
+  "date": "2023-10-10",
+  "result": 700056.6
+}

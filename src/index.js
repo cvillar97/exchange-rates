@@ -14,7 +14,7 @@ function updateTextContent(text, id) {
 
 function showElement(element) {
   element.classList.remove("hidden");
-  window.scrollTo(0, 1000);
+  window.scrollTo(0, 800);
 }
 
 function getCurrenciesList(date, baseCurrency) {
