@@ -27,26 +27,20 @@
   <body>
     <div id="root" class="ms me mt mb">
       <header>Explore different <span>currencies</span></header>
-      <main>
+      <main id="main-section">
         <div class="row">
           <div class="col-md-6">
             <form id="base-currency-date-selector">
               <div class="form-group mb-3 me-3 ms-3 mt-3">
                 <label class="form-label">Select base currency</label>
-                <select class="form-control">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
+                <select class="form-control" id="base-currency"></select>
               </div>
               <div class="input-container mb-3 me-3 ms-3 mt-3">
                 <label for="date">Select date</label>
                 <div class="input-group mb-3">
                   <input type="date" class="form-control" id="date" />
                 </div>
-                <button type="button" class="btn btn-success w-100">
+                <button type="button" id="enter" class="btn btn-success w-100">
                   Enter
                 </button>
               </div>
@@ -58,11 +52,17 @@
               <div class="container p-0">
                 <div class="mb-3 p-0" id="from">
                   <label class="form-label">From</label>
-                  <select class="form-select border-success fw-medium"></select>
+                  <select
+                    class="form-select border-success fw-medium"
+                    id="from-currency"
+                  ></select>
                 </div>
                 <div class="mb-3 p-0" id="to">
                   <label class="form-label">To</label>
-                  <select class="form-select border-success fw-medium"></select>
+                  <select
+                    class="form-select border-success fw-medium"
+                    id="target-currency"
+                  ></select>
                 </div>
               </div>
               <div class="container mb-2 p-0" id="">
@@ -75,11 +75,16 @@
                   id="amount"
                 />
               </div>
-              <button class="btn btn-success w-100 mb-3" id="convert">
+              <button
+                type="button"
+                class="btn btn-success w-100 mb-3"
+                id="convert"
+              >
                 Convert
               </button>
               <div
                 class="container border border-success border-2 border-secondary rounded-4 fw-bold w-100"
+                id="result"
                 style="min-height: 35px"
               ></div>
             </form>
@@ -91,8 +96,26 @@
             />
           </div>
         </div>
+        <div
+          data-cy="table"
+          class="container overflow-scroll table-container hidden"
+        >
+          <str class="table-date fw-bold"></str>
+          <table class="table table-bordered" id="table-of-currencies">
+            <thead>
+              <tr>
+                <th class="bg-success fw-bold" scope="col">Currency</th>
+                <th class="bg-success fw-bold" id="th-value" scope="col">
+                  Value
+                </th>
+              </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </div>
       </main>
       <footer></footer>
     </div>
+    <script src="src/index.js"></script>
   </body>
 </html>
