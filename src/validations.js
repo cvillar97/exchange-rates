@@ -16,6 +16,31 @@ function validateCurrencies(base, target) {
   }
 }
 
+function handleErrors(errors) {
+  const keys = Object.keys(errors);
+  const $ulErrors = document.querySelector("#errors");
+  $ulErrors.innerHTML = "";
+  let errorsCounter = 0;
+
+  keys.forEach((key) => {
+    const error = errors[key];
+    const element = document.querySelector(`#${key}`);
+
+    if (error) {
+      errorsCounter++;
+      element.classList.add("error");
+      const $error = document.createElement("li");
+      $error.textContent = error;
+
+      $ulErrors.appendChild($error);
+    } else {
+      element.classList.remove("error");
+    }
+  });
+
+  return errorsCounter;
+}
+
 function validateForm(base, target, amount) {
   const currenciesError = validateCurrencies(base, target);
   const amountError = validateAmount(amount);
