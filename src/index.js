@@ -68,9 +68,15 @@ function showConversion() {
   const targetCurrency = document.querySelector("#target-currency").value;
   const amount = document.querySelector("#amount").value;
 
-  getAPIConversion(targetCurrency, baseCurrency, amount).then((result) => {
-    updateTextContent(result, "#result");
-  });
+  const errors = validateForm(baseCurrency, targetCurrency, amount);
+
+  const success = errors === 0;
+
+  if (success) {
+    getAPIConversion(targetCurrency, baseCurrency, amount).then((result) => {
+      updateTextContent(result, "#result");
+    });
+  }
 }
 
 function getAPIData() {
