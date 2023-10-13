@@ -16,3 +16,16 @@ function validateCurrencies(base, target) {
   }
 }
 
+function validateForm(base, target, amount) {
+  const currenciesError = validateCurrencies(base, target);
+  const amountError = validateAmount(amount);
+
+  const errors = {
+    currencies: currenciesError,
+    amount: amountError,
+  };
+
+  const errorsCounter = handleErrors(errors);
+
+  return errorsCounter;
+}
