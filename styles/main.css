@@ -12,7 +12,7 @@ header {
   margin: 20px;
 }
 
-header > span {
+span {
   color: #198754;
 }
 
@@ -31,4 +31,9 @@ header > span {
 
 .error {
   border: 2px solid red;
+}
+
+h2 {
+  font-size: 2em;
+  font-family: FreeMono, monospace;
 }
