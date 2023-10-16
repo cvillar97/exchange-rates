@@ -1,5 +1,5 @@
 function validateAmount(amount) {
-  if (amount <= 0 && amount !== "") {
+  if (amount <= 0 && amount) {
     return "Amount can't be less or equal to 0";
   } else if (amount === "") {
     return "Amount can't be null";
