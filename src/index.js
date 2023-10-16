@@ -1,5 +1,6 @@
 const myHeaders = new Headers();
 myHeaders.append("apikey", "ObrRM6eYVg1bioHuZ0PPB7PJIr4g8rIR");
+const mainUrl = "https://api.apilayer.com/exchangerates_data";
 
 const requestOptions = {
   method: "GET",
@@ -18,10 +19,7 @@ function showElement(element) {
 }
 
 function getCurrenciesList(date, baseCurrency) {
-  return fetch(
-    `https://api.apilayer.com/exchangerates_data/${date}&base=${baseCurrency}`,
-    requestOptions
-  )
+  return fetch(`${mainUrl}/${date}&base=${baseCurrency}`, requestOptions)
     .then((response) => response.json())
     .then((JSONresponse) => JSONresponse.rates);
 }
@@ -56,7 +54,7 @@ function createCurrenciesTable() {
 
 function getAPIConversion(to, from, amount) {
   return fetch(
-    `https://api.apilayer.com/exchangerates_data/convert?to=${to}&from=${from}&amount=${amount}`,
+    `${mainUrl}/convert?to=${to}&from=${from}&amount=${amount}`,
     requestOptions
   )
     .then((response) => response.json())
@@ -80,10 +78,7 @@ function showConversion() {
 }
 
 function getAPIData() {
-  return fetch(
-    "https://api.apilayer.com/exchangerates_data/latest",
-    requestOptions
-  )
+  return fetch(`${mainUrl}/latest`, requestOptions)
     .then((response) => response.json())
     .then((JSONresponse) => JSONresponse.rates);
 }
