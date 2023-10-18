@@ -18,7 +18,7 @@ function showElement(element) {
   window.scrollTo(0, 800);
 }
 
-function getCurrenciesList(date, baseCurrency) {
+function getCurrencies(date, baseCurrency) {
   return fetch(`${mainUrl}/${date}&base=${baseCurrency}`, requestOptions)
     .then((response) => response.json())
     .then((JSONresponse) => JSONresponse.rates);
@@ -31,7 +31,7 @@ function createCurrenciesTable() {
   const date = document.querySelector("#date").value;
   const baseCurrency = document.querySelector("#base-currency").value;
 
-  getCurrenciesList(date, baseCurrency).then((currenciesList) => {
+  getCurrencies(date, baseCurrency).then((currenciesList) => {
     tableBody.innerHTML = "";
     Object.keys(currenciesList).forEach((currency) => {
       const currencyTr = document.createElement("tr");
