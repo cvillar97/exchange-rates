@@ -1,6 +1,6 @@
 /// <reference types="Cypress"> />
 
-const WebURL = "192.168.0.113:8080";
+const WebURL = "192.168.0.109:8080";
 const numberOfCurrencies = 170;
 const conversionResult = "700056.6";
 const dayjs = require("dayjs");
